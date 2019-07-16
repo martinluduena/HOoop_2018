@@ -10,8 +10,12 @@ class FilaPreferencial(Fila):
     """Clase de la fila de los clientes preferenciales"""        
 
     def insertar(self, cliente):
-        """Inserta un nuevo cliente en la fila preferencial"""
-        pass
+        """Inserta un nuevo cliente en la fila preferencial"""        
+        if cliente.categoria == "Preferencial":
+            self.enfila += 1
+            self.fila.append( cliente )
+        else:
+            print("Este cliente debe cambiar de Fila")   
 
     def atender(self):
         """Atiende al proximo cliente prederencial"""
@@ -29,7 +33,11 @@ class FilaGeneral(Fila):
 
     def insertar(self, cliente):
         """Inserta un nuevo cliente en la fila no preferencial"""
-        pass
+        if cliente.categoria == "General":
+            self.enfila += 1
+            self.fila.append( cliente )
+        else:
+            print("Este cliente debe cambiar de Fila") 
 
     def atender(self):
         """Atiende al proximo cliente prederencial"""
