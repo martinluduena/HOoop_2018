@@ -41,7 +41,9 @@ class FilaGeneral(Fila):
 
     def atender(self):
         """Atiende al proximo cliente prederencial"""
-        pass      
+        self.enfila -= 1
+        self.fila.pop(0)
+        pass   
 
     
 
